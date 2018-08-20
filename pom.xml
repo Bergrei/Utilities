@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.2nerds</groupId>
   <artifactId>Utilities</artifactId>
-  <version>0.0.1</version>
+  <version>RELEASE</version>
   <name>Utilites</name>
   <description>Provides basic utilities for other projects</description>
   <build>
@@ -16,6 +16,27 @@
           <target>1.8</target>
         </configuration>
       </plugin>
-    </plugins>
-  </build>
+      </plugins>
+		<extensions>
+			<!-- begin - needed for deploying to repository using webdav -->
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-webdav-jackrabbit</artifactId>
+				<version>3.1.0</version>
+			</extension>
+			<!-- end - needed for deploying to repository using webdav -->
+		</extensions>
+	</build>
+	<distributionManagement>
+		<repository>
+			<id>archiva.internal</id>
+			<name>Internal Release Repository</name>
+			<url>dav:http://localhost:9000/repository/internal/</url>
+		</repository>
+		<snapshotRepository>
+			<id>archiva.snapshots</id>
+			<name>Internal Snapshot Repository</name>
+			<url>dav:http://localhost:9000/repository/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>
