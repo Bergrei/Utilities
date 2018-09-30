@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.2nerds</groupId>
   <artifactId>Utilities</artifactId>
-  <version>RELEASE</version>
+  <version>0.0.2</version>
   <name>Utilites</name>
   <description>Provides basic utilities for other projects</description>
   <build>
